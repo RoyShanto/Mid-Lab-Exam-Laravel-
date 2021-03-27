@@ -51,4 +51,9 @@ Route::post('/edit_product/{id}', [ProductController::class, 'edited_product']);
 
 Route::get('/delete_product/{id}', [ProductController::class, 'delete_product']);
 
+Route::get('/customer_list', [UserController::class, 'customer_list']);
+Route::get('/delete_customer/{id}', [UserController::class, 'delete_customer']);
+
+
+
 

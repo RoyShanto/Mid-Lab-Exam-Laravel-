@@ -48,5 +48,13 @@ class UserController extends Controller
         return view('Admin.index');
         // return view('Customer.index', ['users' => $users]);
     }
-
+    public function customer_list(){
+        $customer = Customer::all();
+        return view('Admin.customer_list', ['users' => $customer]);
+    }
+    public function delete_customer($id){
+        $data = Customer::find($id);
+        $data->delete();
+        return redirect('/customer_list');
+    }
 }
