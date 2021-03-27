@@ -43,4 +43,10 @@ class UserController extends Controller
         return redirect('/abc.com');
 
     }
+
+    public function admin_home(){
+        return view('Admin.index');
+        // return view('Customer.index', ['users' => $users]);
+    }
+
 }

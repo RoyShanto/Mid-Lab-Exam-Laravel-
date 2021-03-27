@@ -25,14 +25,23 @@ class LoginController extends Controller
         if(count($users) > 0){
 
             $req->session()->put('username', $req->username);
+            foreach($users as $u){
+                if($u->u_type == 'admin'){
+                    return redirect('/home');
+                }
+                else{
+                    return redirect('/abc.com');
+                }
+            }
 
-                return redirect('/abc.com');
+
         }
         else{
             $req->session()->flash('msg', 'invalide user..!');
             return redirect('/login');
         }
-
     }
+
+
 
 }

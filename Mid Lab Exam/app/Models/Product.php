@@ -11,4 +11,5 @@ class Product extends Model
     protected $primaryKey = 'p_id';
     protected $table = 'product';
     public $incrementing = false;
+    public $timestamps = false;
 }
