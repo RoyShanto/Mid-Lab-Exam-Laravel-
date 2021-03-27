@@ -47,14 +47,19 @@ class ProductController extends Controller
         $user = DB::table('product')
         ->where('p_id', $id)
         ->update([
-            'p_name' => $req->p_name,
-            'p_price' => $req->p_price,
-            'p_quantity' => $req->p_quantity,
-            'size' => $req->p_size,
-            'short_description' => $req->short_description,
-            'gender' => $req->p_gender,
-            'image' => $req->p_image
-            ]);
-            return redirect('/products_list');
+        'p_name' => $req->p_name,
+        'p_price' => $req->p_price,
+        'p_quantity' => $req->p_quantity,
+        'size' => $req->p_size,
+        'short_description' => $req->short_description,
+        'gender' => $req->p_gender,
+        'image' => $req->p_image
+        ]);
+        return redirect('/products_list');
+    }
+    public function delete_product($id){
+        $data = Product::find($id);
+        $data->delete();
+        return redirect('/products_list');
     }
 }
