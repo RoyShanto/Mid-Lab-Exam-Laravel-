@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/abc.com', [ProductController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index']);
 
