@@ -12,4 +12,11 @@ class ProductController extends Controller
         $users = Product::all();
         return view('Customer.index', ['users' => $users]);
     }
+
+    public function show_product($id, Request $req){
+        echo $id;
+        $users = DB::table('product')->where('p_id', $id)->get();
+        return view('Customer.select_product', ['users' => $users]);
+
+    }
 }
