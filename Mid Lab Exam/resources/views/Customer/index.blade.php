@@ -35,6 +35,7 @@
             </a>
             @endforeach
         <!-- </form> -->
+                <a href="/profile/{{ session('username')}}">My profile</a>
                 <a href="/logout">Logout</a>
     </body>
 </html>

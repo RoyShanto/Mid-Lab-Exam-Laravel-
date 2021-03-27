@@ -24,7 +24,6 @@ class RegistrationController extends Controller
             'password' => 'required|min:5|max:20|alpha_num',
             'confirm_password' =>'required|required_with:password|same:password',
             'address' => '',
-            'cname' => 'min:3|max:20',
             'phone' => 'required|digits_between:11,15',
             'city' => 'min:3|max:20',
             'country' => 'min:3|max:20'
@@ -52,7 +51,6 @@ class RegistrationController extends Controller
             $user->email = $req->email;
             $user->password = $req->password;
             $user->address = $req->address;
-            $user->company_name = $req->cname;
             $user->phone = $req->phone;
             $user->city = $req->city;
             $user->country = $req->country;

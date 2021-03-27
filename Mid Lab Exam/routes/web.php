@@ -4,6 +4,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +33,8 @@ Route::get('/show_product/{id}', [ProductController::class, 'show_product'])->mi
 
 route::get('/registration', [RegistrationController::class, 'index']);
 route::post('/registration', [RegistrationController::class, 'store_user']);
+
+
+route::get('/profile/{username}', [UserController::class, 'index']);
+route::post('/profile/{username}', [UserController::class, 'update_info']);
 
