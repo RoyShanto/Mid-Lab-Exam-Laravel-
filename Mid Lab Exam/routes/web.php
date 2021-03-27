@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +29,7 @@ Route::post('/login', [LoginController::class, 'verify']);
 Route::get('/logout', [LogoutController::class, 'index']);
 
 Route::get('/show_product/{id}', [ProductController::class, 'show_product'])->middleware('sess');
+
+route::get('/registration', [RegistrationController::class, 'index']);
+route::post('/registration', [RegistrationController::class, 'store_user']);
 
